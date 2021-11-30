@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block titulo %} Pagina Principal {% endblock %}
+
+{% block contenido %}
+
+<center>
+  <form action="/crearnota" method="post">
+    <section class="form-register">
+    <label for="titulo">Titulo de la nota</label><br>
+    <input class="controls" type="text" name="campotitulo" value="">
+    <br>
+    <label for="cuerpo">Cuerpo de la Nota</label><br>
+    <input class="controls"  type="text" name="campocuerpo" value="">
+    <input class= "controls" type="submit" value="crear nota">
+  </form>
+  </section>
+
+{% for nombre in variable %}
+<p>
+  {{nombre}}
+</p>
+{% endfor %}
+{% endblock %}
+
+

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block titulo %} Pagina Principal {% endblock %}
+
+{% block contenido %}
+
+<center>
+<form action="/leernotas" method="post">
+    <p>{{Nota}}</p>
+  <table>
+
+    <caption>{% for nota in constlta %}</caption>
+    <thead>
+      <tr>
+        <th>     Titulo    </th>
+        <th>     Cuerpo    </th>
+        <th>               </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{nota.tituloNota}}</td>
+        <td>{{nota.cuerpoNota}}</td>
+        <td><a href="/eliminarnota/{{nota.idNota}}"><img src="/static/imagen/eliminar.png" width="30" height="30"></a>
+          <a href="/editarnota/{{nota.idNota}}"><img src="/static/imagen/editar.png" width="30" height="30"></a>
+        </td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+
+{% for nombre in variable %}
+<p>
+  {{nombre}}
+</p>
+{% endfor %}
+{% endblock %}
+

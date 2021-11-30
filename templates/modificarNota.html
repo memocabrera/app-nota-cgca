@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block titulo %} Pagina Principal {% endblock %}
+
+{% block contenido %}
+
+
+<p>{{Nota}}</p>
+<center>
+  <form action="/modificarnota" method="post">
+    <section class="form-register">
+    <label for="titulo">titulo nota</label><br>
+    <input type="text" name="campotitulo" value="{{nota.tituloNota}}">
+    <br>
+    <label for="cuerpo">Cuerpo de la Nota</label><br>
+    <input type="text" name="campocuerpo" value="{{nota.cuerpoNota}}">
+    <input type="hidden" name="idnota" value="{{nota.idNota}}"> 
+    <input  class= "controls" type="submit" value="Modificar nota">
+  
+    
+  </form>
+  </section>
+
+
+{% for nombre in variable %}
+<p>
+  {{nombre}}
+</p>
+{% endfor %}
+{% endblock %}
+
+
